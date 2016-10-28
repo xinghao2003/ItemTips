@@ -42,17 +42,16 @@ class Main extends PluginBase implements Listener {
   }
   
   public function onItemHeld(PlayerItemHeldEvent $event){
-	$player = $event->getPlayer();
-    $id = $event->getItem()->getID();
-    if($player->isOp()){
-		$qxtip= TextFormat::GOLD ."欢迎回来，管理员！";
-		}else{	$qxtip=TextFormat::GREEN." 欢迎回来,玩家！";}
-    
-	switch($id){
+  $player = $event->getPlayer();
+  $id = $event->getItem()->getID();
+  $ownertip= TextFormat::GOLD ."伺服器服主是：XingHao| 有啥事可以联系他！";
+
+  
+  switch($id){
       
-	case "302":
-	$event->getPlayer()->sendPopup("§6[ItemTips] $qxtip ");
-	return false;
+  case "302":
+  $event->getPlayer()->sendPopup("§6[ItemTips] $ownerqxtip ");
+  return false;
   }
   }
     
