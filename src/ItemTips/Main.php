@@ -39,5 +39,20 @@ class Main extends PluginBase implements Listener {
   $this->getLogger()->info("ItemTips插件关闭");
   }
   
+  public function onItemHeld(PlayerItemHeldEvent $event){
+		$player = $event->getPlayer();
+    $id = $event->getItem()->getID();
+    if($player->isOp()){
+		$302tip= TextFormat::GOLD ."欢迎回来，管理员$player";
+		}else{	$302tip=TextFormat::GREEN." 欢迎来到本伺服器$player，你只是玩家，不要痴心妄想哟！";}
+    
+	switch($id){
+      
+	case "302":
+	$event->getPlayer()->sendPopup("§6[ItemTips] $302tip ");
+	return false;
+  }
+  }
+    
 }
 ?>
