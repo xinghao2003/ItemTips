@@ -29,6 +29,8 @@ use pocketmine\event\player\PlayerDeathEvent;
 use pocketmine\event\player\PlayerRespawnEvent;
 
 class Main extends PluginBase implements Listener {
+	
+  public function onLoad(){ $this->getLogger()->info(TextFormat::WHITE . "插件启动中"); }
 
   public function onEnable() {
   $this->getServer()->getPluginManager()->registerEvents($this,$this);
@@ -40,16 +42,16 @@ class Main extends PluginBase implements Listener {
   }
   
   public function onItemHeld(PlayerItemHeldEvent $event){
-		$player = $event->getPlayer();
+	$player = $event->getPlayer();
     $id = $event->getItem()->getID();
     if($player->isOp()){
-		$302tip= TextFormat::GOLD ."欢迎回来，管理员$player";
-		}else{	$302tip=TextFormat::GREEN." 欢迎来到本伺服器$player，你只是玩家，不要痴心妄想哟！";}
+		$qxtip= TextFormat::GOLD ."欢迎回来，管理员！";
+		}else{	$qxtip=TextFormat::GREEN." 欢迎回来,玩家！";}
     
 	switch($id){
       
 	case "302":
-	$event->getPlayer()->sendPopup("§6[ItemTips] $302tip ");
+	$event->getPlayer()->sendPopup("§6[ItemTips] $qxtip ");
 	return false;
   }
   }
