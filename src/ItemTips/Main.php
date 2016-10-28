@@ -44,13 +44,11 @@ class Main extends PluginBase implements Listener {
   public function onItemHeld(PlayerItemHeldEvent $event){
   $player = $event->getPlayer();
   $id = $event->getItem()->getID();
-  $ownertip= TextFormat::GOLD ."伺服器服主是：XingHao| 有啥事可以联系他！";
-
   
   switch($id){
       
   case "302":
-  $event->getPlayer()->sendPopup("§6[ItemTips] $ownerqxtip ");
+  $event->getPlayer()->sendTip("§6[ItemTips] §b伺服器服主是：XingHao| 有啥事可以联系他！ ");
   return false;
   }
   }
