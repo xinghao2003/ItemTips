@@ -1,0 +1,5 @@
+name: ItemTips
+main: ItemTips\Main
+version: 1.0.0
+author: XingHao
+api: [2.0.0]
