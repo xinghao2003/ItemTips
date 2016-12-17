@@ -48,7 +48,7 @@ class Main extends PluginBase implements Listener {
   switch($id){
       
   case "302":
-  $event->getPlayer()->sendTip("§6[ItemTips] §b伺服器服主是：XingHao| 有啥事可以联系他！ ");
+  $event->getPlayer()->sendPopup("§6[ItemTips] §b伺服器服主是：XingHao| 有啥事可以联系他！ ");
   return false;
   }
   }
